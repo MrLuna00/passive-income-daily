@@ -6,410 +6,63 @@
     <title>Passive Income Daily - Turn Time Into Money</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #4cc9f0;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #4bb543;
-            --warning: #ffcc00;
-        }
-
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: var(--dark);
-            line-height: 1.6;
-            min-height: 100vh;
-            padding-bottom: 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            padding: 1rem 0;
-            position: relative;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            text-align: center;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .admin-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .admin-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-        }
-
-        .hero {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            margin: 2rem auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 800px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .country-selector {
-            margin: 2rem 0;
-        }
-
-        select {
-            width: 100%;
-            max-width: 400px;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            background: white;
-            transition: all 0.3s ease;
-        }
-
-        select:focus {
-            border-color: var(--primary);
-            outline: none;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.6);
-        }
-
-        .cta-button:disabled {
-            background: #cccccc;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .how-it-works {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            margin: 2rem auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 1000px;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--secondary);
-        }
-
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .step {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .step-icon {
-            background: var(--primary);
-            color: white;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.8rem;
-        }
-
-        .step h3 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .partner-section, .course-section {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            margin: 2rem auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .course-section {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .course-section h2, .course-section h3, .course-section p {
-            color: white;
-        }
-
-        .course-list {
-            text-align: left;
-            max-width: 500px;
-            margin: 2rem auto;
-        }
-
-        .course-list ul {
-            list-style-type: none;
-        }
-
-        .course-list li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .course-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--warning);
-            font-weight: bold;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 1.5rem 0;
-        }
-
-        .faq {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            margin: 2rem auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1.5rem;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .modal h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-
-        .input-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .input-group input, .input-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .modal-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-        }
-
-        .btn-secondary {
-            background: #e0e0e0;
-            color: var(--dark);
-            border: none;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .country-links {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 1rem;
-        }
-
-        .link-item {
-            display: flex;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .link-country {
-            flex: 0 0 150px;
-            font-weight: 600;
-        }
-
-        .link-url {
-            flex: 1;
-            padding: 0 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .testimonial {
-            background: var(--light);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: center;
-            border-left: 4px solid var(--primary);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--secondary);
-        }
-
-        footer {
-            text-align: center;
-            color: white;
-            margin-top: 2rem;
-            padding: 1rem;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        :root { --primary: #4361ee; --secondary: #3a0ca3; --accent: #4cc9f0; --light: #f8f9fa; --dark: #212529; --success: #4bb543; --warning: #ffcc00; }
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: var(--dark); line-height: 1.6; min-height: 100vh; padding-bottom: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { padding: 1rem 0; position: relative; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: white; text-align: center; }
+        .logo span { color: var(--accent); }
+        .admin-btn { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.2); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; font-size: 1.2rem; transition: all 0.3s ease; }
+        .admin-btn:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
+        .hero { background: white; border-radius: 15px; padding: 3rem 2rem; margin: 2rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; max-width: 800px; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--secondary); }
+        .subtitle { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
+        .country-selector { margin: 2rem 0; }
+        select { width: 100%; max-width: 400px; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; margin-bottom: 1.5rem; background: white; transition: all 0.3s ease; }
+        select:focus { border-color: var(--primary); outline: none; }
+        .cta-button { display: inline-block; background: linear-gradient(to right, var(--primary), var(--secondary)); color: white; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; box-shadow: 0 5px 15px rgba(67,97,238,0.4); }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(67,97,238,0.6); }
+        .cta-button:disabled { background: #cccccc; cursor: not-allowed; transform: none; box-shadow: none; }
+        .how-it-works { background: white; border-radius: 15px; padding: 3rem 2rem; margin: 2rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 1000px; }
+        h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--secondary); }
+        .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+        .step { flex: 1; min-width: 250px; text-align: center; padding: 1.5rem; }
+        .step-icon { background: var(--primary); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.8rem; }
+        .partner-section, .course-section { background: white; border-radius: 15px; padding: 3rem 2rem; margin: 2rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 800px; text-align: center; }
+        .course-section { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+        .course-section h2, .course-section h3, .course-section p { color: white; }
+        .course-list { text-align: left; max-width: 500px; margin: 2rem auto; }
+        .course-list ul { list-style-type: none; }
+        .course-list li { margin-bottom: 1rem; padding-left: 2rem; position: relative; }
+        .course-list li:before { content: "✓"; position: absolute; left: 0; color: var(--warning); font-weight: bold; }
+        .price { font-size: 2.5rem; font-weight: 700; margin: 1.5rem 0; }
+        .faq { background: white; border-radius: 15px; padding: 3rem 2rem; margin: 2rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 800px; }
+        .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem; }
+        .faq-question { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--secondary); }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; }
+        .modal-content { background: white; border-radius: 15px; padding: 2rem; width: 90%; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .modal h2 { text-align: center; margin-bottom: 1.5rem; color: var(--secondary); }
+        .input-group { margin-bottom: 1.5rem; }
+        .input-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        .input-group input, .input-group select { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; }
+        .modal-buttons { display: flex; justify-content: space-between; margin-top: 1.5rem; }
+        .btn { padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .btn-primary { background: var(--primary); color: white; border: none; }
+        .btn-secondary { background: #e0e0e0; color: var(--dark); border: none; }
+        .btn:hover { transform: translateY(-2px); }
+        .country-links { max-height: 300px; overflow-y: auto; margin-top: 1rem; }
+        .link-item { display: flex; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+        .link-country { flex: 0 0 150px; font-weight: 600; }
+        .testimonial { background: var(--light); border-radius: 10px; padding: 1.5rem; margin: 2rem 0; text-align: center; border-left: 4px solid var(--primary); }
+        .testimonial-text { font-style: italic; margin-bottom: 1rem; }
+        .testimonial-author { font-weight: 600; color: var(--secondary); }
+        footer { text-align: center; color: white; margin-top: 2rem; padding: 1rem; }
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .hero, .how-it-works, .partner-section, .course-section, .faq {
-                padding: 2rem 1rem;
-            }
-            
-            .steps {
-                flex-direction: column;
-            }
-            
-            .step {
-                min-width: 100%;
-            }
+            h1 { font-size: 2rem; }
+            .hero, .how-it-works, .partner-section, .course-section, .faq { padding: 2rem 1rem; }
+            .steps { flex-direction: column; }
+            .step { min-width: 100%; }
         }
     </style>
 </head>
@@ -417,22 +70,21 @@
     <div class="container">
         <header>
             <div class="logo">Passive Income <span>Daily</span></div>
-            <button class="admin-btn" id="adminBtn">
-                <i class="fas fa-cog"></i>
-            </button>
+            <button class="admin-btn" id="adminBtn"><i class="fas fa-cog"></i></button>
         </header>
 
         <section class="hero">
             <h1>Turn Your Time Into Money</h1>
-            <p class="subtitle">Access 20+ High-Paying Passive Income Offers Tailored for Your Country</p>
-            
+            <p class="subtitle">Access 70+ High-Paying Passive Income Offers Tailored for Your Country</p>
             <div class="country-selector">
                 <select id="countrySelect">
                     <option value="">Select Your Country</option>
+                    <!-- North America -->
                     <option value="US">United States</option>
-                    <option value="UK">United Kingdom</option>
                     <option value="CA">Canada</option>
-                    <option value="AU">Australia</option>
+                    <option value="MX">Mexico</option>
+                    <!-- Europe -->
+                    <option value="UK">United Kingdom</option>
                     <option value="DE">Germany</option>
                     <option value="FR">France</option>
                     <option value="IT">Italy</option>
@@ -446,40 +98,75 @@
                     <option value="AT">Austria</option>
                     <option value="CH">Switzerland</option>
                     <option value="IE">Ireland</option>
+                    <option value="PT">Portugal</option>
+                    <option value="GR">Greece</option>
+                    <option value="PL">Poland</option>
+                    <option value="HU">Hungary</option>
+                    <option value="RO">Romania</option>
+                    <option value="CZ">Czech Republic</option>
+                    <!-- Asia -->
+                    <option value="AU">Australia</option>
                     <option value="NZ">New Zealand</option>
                     <option value="JP">Japan</option>
                     <option value="SG">Singapore</option>
+                    <option value="KR">South Korea</option>
+                    <option value="CN">China</option>
+                    <option value="IN">India</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="PH">Philippines</option>
+                    <option value="TH">Thailand</option>
+                    <option value="MY">Malaysia</option>
+                    <!-- Middle East -->
                     <option value="AE">United Arab Emirates</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="IL">Israel</option>
+                    <option value="TR">Turkey</option>
+                    <!-- Africa -->
+                    <option value="NG">Nigeria</option>
+                    <option value="GH">Ghana</option>
+                    <option value="KE">Kenya</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="EG">Egypt</option>
+                    <option value="ET">Ethiopia</option>
+                    <option value="TZ">Tanzania</option>
+                    <option value="UG">Uganda</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="SD">Sudan</option>
+                    <option value="MA">Morocco</option>
+                    <option value="AO">Angola</option>
+                    <option value="MZ">Mozambique</option>
+                    <option value="CI">Ivory Coast</option>
+                    <option value="MG">Madagascar</option>
+                    <option value="CM">Cameroon</option>
+                    <option value="BF">Burkina Faso</option>
+                    <option value="SN">Senegal</option>
+                    <option value="ZW">Zimbabwe</option>
+                    <option value="TN">Tunisia</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="BJ">Benin</option>
+                    <option value="ZM">Zambia</option>
+                    <option value="ML">Mali</option>
+                    <option value="NE">Niger</option>
+                    <option value="MW">Malawi</option>
+                    <option value="SL">Sierra Leone</option>
+                    <option value="LR">Liberia</option>
+                    <!-- South America -->
+                    <option value="BR">Brazil</option>
+                    <option value="AR">Argentina</option>
+                    <option value="CL">Chile</option>
+                    <option value="CO">Colombia</option>
+                    <option value="PE">Peru</option>
                 </select>
             </div>
-            
             <button id="offerButton" class="cta-button" disabled>Select Your Country to Continue</button>
         </section>
 
         <section class="how-it-works">
             <h2>How It Works</h2>
             <div class="steps">
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <h3>Select Your Country</h3>
-                    <p>Find the best offers available in your region from our curated list.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3>Choose & Complete Offers</h3>
-                    <p>We connect you directly with trusted partners. Complete simple tasks like signing up or downloading apps.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>Get Paid</h3>
-                    <p>Earn cash, gift cards, or crypto directly to your account. It's that simple.</p>
-                </div>
+                <div class="step"><div class="step-icon"><i class="fas fa-globe-americas"></i></div><h3>Select Your Country</h3><p>Find the best offers available in your region from our curated list.</p></div>
+                <div class="step"><div class="step-icon"><i class="fas fa-tasks"></i></div><h3>Choose & Complete Offers</h3><p>We connect you directly with trusted partners. Complete simple tasks like signing up or downloading apps.</p></div>
+                <div class="step"><div class="step-icon"><i class="fas fa-money-bill-wave"></i></div><h3>Get Paid</h3><p>Earn cash, gift cards, or crypto directly to your account. It's that simple.</p></div>
             </div>
         </section>
 
@@ -498,7 +185,6 @@
             <h2>From Beginner to Pro</h2>
             <h3>Go Viral & Scale Your Income</h3>
             <p>You've seen the free methods. Now discover the advanced strategies I use to get content viral and build multiple passive income streams.</p>
-            
             <div class="course-list">
                 <ul>
                     <li>The Viral Content Formula for TikTok & Instagram</li>
@@ -508,78 +194,42 @@
                     <li>My Personal Swipe File of Winning Ad Copies</li>
                 </ul>
             </div>
-            
-            <div class="price">$47</div>
+            <div class="price">$10</div>
             <a href="#" id="courseLink" class="cta-button">Download Now & Learn The Secrets</a>
         </section>
 
         <section class="faq">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <div class="faq-question">Is this really free?</div>
-                <p>Yes! Signing up and accessing offers is completely free. You will never be asked for a credit card to participate in these offers.</p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How and when do I get paid?</div>
-                <p>Payment methods vary by offer but typically include PayPal, gift cards, or direct bank transfer. Most offers pay within 24-48 hours after completion.</p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Is this available in my country?</div>
-                <p>We have offers for many countries worldwide. Select your country from the dropdown to see available offers.</p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Do I need any special skills?</div>
-                <p>Not at all! Most offers require basic actions like signing up for services, downloading apps, or completing surveys.</p>
-            </div>
+            <div class="faq-item"><div class="faq-question">Is this really free?</div><p>Yes! Signing up and accessing offers is completely free. You will never be asked for a credit card to participate in these offers.</p></div>
+            <div class="faq-item"><div class="faq-question">How and when do I get paid?</div><p>Payment methods vary by offer but typically include PayPal, gift cards, or direct bank transfer. Most offers pay within 24-48 hours after completion.</p></div>
+            <div class="faq-item"><div class="faq-question">Is this available in my country?</div><p>We have offers for many countries worldwide. Select your country from the dropdown to see available offers.</p></div>
+            <div class="faq-item"><div class="faq-question">Do I need any special skills?</div><p>Not at all! Most offers require basic actions like signing up for services, downloading apps, or completing surveys.</p></div>
         </section>
 
-        <footer>
-            <p>Passive Income Daily &copy; 2024 | All Rights Reserved</p>
-        </footer>
+        <footer><p>Passive Income Daily &copy; 2024 | All Rights Reserved</p></footer>
     </div>
 
-    <!-- Admin Modal -->
     <div class="modal" id="adminModal">
         <div class="modal-content">
             <h2>Admin Panel</h2>
-            <div class="input-group">
-                <label for="adminPassword">Password</label>
-                <input type="password" id="adminPassword" placeholder="Enter admin password">
-            </div>
+            <div class="input-group"><label for="adminPassword">Password</label><input type="password" id="adminPassword" placeholder="Enter admin password"></div>
             <button id="loginBtn" class="btn btn-primary" style="width: 100%;">Login</button>
         </div>
     </div>
 
-    <!-- Links Management Modal -->
     <div class="modal" id="linksModal">
         <div class="modal-content">
             <h2>Manage Offer Links</h2>
             <p>Set the CPA Grip offer links for each country:</p>
-            
-            <div class="country-links">
-                <!-- Links will be populated by JavaScript -->
-            </div>
-            
-            <div class="input-group">
-                <label for="partnerLinkInput">Partner Referral Link</label>
-                <input type="text" id="partnerLinkInput" placeholder="Paste your CPA network referral link">
-            </div>
-            
-            <div class="input-group">
-                <label for="courseLinkInput">Course Sales Link</label>
-                <input type="text" id="courseLinkInput" placeholder="Paste your course sales page link">
-            </div>
-            
-            <div class="modal-buttons">
-                <button id="saveLinksBtn" class="btn btn-primary">Save All Links</button>
-                <button id="closeLinksBtn" class="btn btn-secondary">Close</button>
-            </div>
+            <div class="country-links"></div>
+            <div class="input-group"><label for="partnerLinkInput">Partner Referral Link</label><input type="text" id="partnerLinkInput" placeholder="Paste your CPA network referral link"></div>
+            <div class="input-group"><label for="courseLinkInput">Course Sales Link</label><input type="text" id="courseLinkInput" placeholder="Paste your course sales page link"></div>
+            <div class="modal-buttons"><button id="saveLinksBtn" class="btn btn-primary">Save All Links</button><button id="closeLinksBtn" class="btn btn-secondary">Close</button></div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Elements
             const adminBtn = document.getElementById('adminBtn');
             const adminModal = document.getElementById('adminModal');
             const linksModal = document.getElementById('linksModal');
@@ -594,55 +244,26 @@
             const partnerLinkInput = document.getElementById('partnerLinkInput');
             const courseLinkInput = document.getElementById('courseLinkInput');
             
-            const countries = [
-                'US', 'UK', 'CA', 'AU', 'DE', 'FR', 'IT', 'ES', 'NL', 'SE',
-                'NO', 'DK', 'FI', 'BE', 'AT', 'CH', 'IE', 'NZ', 'JP', 'SG', 'AE'
-            ];
+            const countries = ['US','CA','MX','UK','DE','FR','IT','ES','NL','SE','NO','DK','FI','BE','AT','CH','IE','PT','GR','PL','HU','RO','CZ','AU','NZ','JP','SG','KR','CN','IN','ID','PH','TH','MY','AE','SA','IL','TR','NG','GH','KE','ZA','EG','ET','TZ','UG','DZ','SD','MA','AO','MZ','CI','MG','CM','BF','SN','ZW','TN','RW','BJ','ZM','ML','NE','MW','SL','LR','BR','AR','CL','CO','PE'];
             
             const countryNames = {
-                'US': 'United States',
-                'UK': 'United Kingdom',
-                'CA': 'Canada',
-                'AU': 'Australia',
-                'DE': 'Germany',
-                'FR': 'France',
-                'IT': 'Italy',
-                'ES': 'Spain',
-                'NL': 'Netherlands',
-                'SE': 'Sweden',
-                'NO': 'Norway',
-                'DK': 'Denmark',
-                'FI': 'Finland',
-                'BE': 'Belgium',
-                'AT': 'Austria',
-                'CH': 'Switzerland',
-                'IE': 'Ireland',
-                'NZ': 'New Zealand',
-                'JP': 'Japan',
-                'SG': 'Singapore',
-                'AE': 'United Arab Emirates'
+                'US':'United States','CA':'Canada','MX':'Mexico','UK':'United Kingdom','DE':'Germany','FR':'France','IT':'Italy','ES':'Spain','NL':'Netherlands','SE':'Sweden','NO':'Norway','DK':'Denmark','FI':'Finland','BE':'Belgium','AT':'Austria','CH':'Switzerland','IE':'Ireland','PT':'Portugal','GR':'Greece','PL':'Poland','HU':'Hungary','RO':'Romania','CZ':'Czech Republic','AU':'Australia','NZ':'New Zealand','JP':'Japan','SG':'Singapore','KR':'South Korea','CN':'China','IN':'India','ID':'Indonesia','PH':'Philippines','TH':'Thailand','MY':'Malaysia','AE':'United Arab Emirates','SA':'Saudi Arabia','IL':'Israel','TR':'Turkey',
+                // African Countries
+                'NG':'Nigeria','GH':'Ghana','KE':'Kenya','ZA':'South Africa','EG':'Egypt','ET':'Ethiopia','TZ':'Tanzania','UG':'Uganda','DZ':'Algeria','SD':'Sudan','MA':'Morocco','AO':'Angola','MZ':'Mozambique','CI':'Ivory Coast','MG':'Madagascar','CM':'Cameroon','BF':'Burkina Faso','SN':'Senegal','ZW':'Zimbabwe','TN':'Tunisia','RW':'Rwanda','BJ':'Benin','ZM':'Zambia','ML':'Mali','NE':'Niger','MW':'Malawi','SL':'Sierra Leone','LR':'Liberia',
+                // South America
+                'BR':'Brazil','AR':'Argentina','CL':'Chile','CO':'Colombia','PE':'Peru'
             };
             
-            // Load links from localStorage
             function loadLinks() {
                 let links = JSON.parse(localStorage.getItem('countryLinks') || '{}');
-                
-                // Initialize empty links for any missing countries
-                countries.forEach(country => {
-                    if (!links[country]) {
-                        links[country] = '';
-                    }
-                });
-                
+                countries.forEach(country => { if (!links[country]) links[country] = ''; });
                 return links;
             }
             
-            // Save links to localStorage
             function saveLinks(links) {
                 localStorage.setItem('countryLinks', JSON.stringify(links));
             }
             
-            // Load partner and course links
             function loadPartnerLink() {
                 return localStorage.getItem('partnerLink') || '#';
             }
@@ -651,51 +272,34 @@
                 return localStorage.getItem('courseLink') || '#';
             }
             
-            // Initialize page
             function initializePage() {
                 const links = loadLinks();
                 partnerLink.href = loadPartnerLink();
                 courseLink.href = loadCourseLink();
-                
-                // Populate the links modal if it's open
                 if (document.querySelector('.country-links')) {
                     const countryLinksContainer = document.querySelector('.country-links');
                     countryLinksContainer.innerHTML = '';
-                    
                     countries.forEach(country => {
                         const linkItem = document.createElement('div');
                         linkItem.className = 'link-item';
-                        linkItem.innerHTML = `
-                            <div class="link-country">${countryNames[country]}</div>
-                            <input type="text" class="link-input" data-country="${country}" 
-                                   value="${links[country] || ''}" placeholder="Paste offer link for ${countryNames[country]}">
-                        `;
+                        linkItem.innerHTML = `<div class="link-country">${countryNames[country]}</div><input type="text" class="link-input" data-country="${country}" value="${links[country] || ''}" placeholder="Paste offer link for ${countryNames[country]}">`;
                         countryLinksContainer.appendChild(linkItem);
                     });
                 }
-                
                 partnerLinkInput.value = loadPartnerLink();
                 courseLinkInput.value = loadCourseLink();
             }
             
-            // Country select change handler
             countrySelect.addEventListener('change', function() {
                 if (this.value) {
                     offerButton.textContent = `View Top Offers For ${countryNames[this.value]}`;
                     offerButton.disabled = false;
-                    
-                    // Set the link for the offer button
                     const links = loadLinks();
                     const selectedLink = links[this.value];
-                    
                     if (selectedLink) {
-                        offerButton.onclick = function() {
-                            window.open(selectedLink, '_blank');
-                        };
+                        offerButton.onclick = function() { window.open(selectedLink, '_blank'); };
                     } else {
-                        offerButton.onclick = function() {
-                            alert(`No offer link set for ${countryNames[this.value]}. Please check back later or try another country.`);
-                        };
+                        offerButton.onclick = function() { alert(`No offer link set for ${countryNames[this.value]}. Please check back later.`); };
                     }
                 } else {
                     offerButton.textContent = 'Select Your Country to Continue';
@@ -703,59 +307,34 @@
                 }
             });
             
-            // Admin button click handler
-            adminBtn.addEventListener('click', function() {
-                adminModal.style.display = 'flex';
-            });
-            
-            // Login button click handler
+            adminBtn.addEventListener('click', function() { adminModal.style.display = 'flex'; });
             loginBtn.addEventListener('click', function() {
                 if (adminPassword.value === '@MrLuna2025') {
                     adminModal.style.display = 'none';
                     linksModal.style.display = 'flex';
                     initializePage();
                     adminPassword.value = '';
-                } else {
-                    alert('Incorrect password!');
-                }
+                } else { alert('Incorrect password!'); }
             });
-            
-            // Save links button click handler
             saveLinksBtn.addEventListener('click', function() {
                 const links = loadLinks();
                 const linkInputs = document.querySelectorAll('.link-input');
-                
                 linkInputs.forEach(input => {
                     const country = input.getAttribute('data-country');
                     links[country] = input.value;
                 });
-                
                 saveLinks(links);
                 localStorage.setItem('partnerLink', partnerLinkInput.value);
                 localStorage.setItem('courseLink', courseLinkInput.value);
-                
                 partnerLink.href = partnerLinkInput.value;
                 courseLink.href = courseLinkInput.value;
-                
                 alert('All links saved successfully!');
             });
-            
-            // Close links modal button click handler
-            closeLinksBtn.addEventListener('click', function() {
-                linksModal.style.display = 'none';
-            });
-            
-            // Close modals when clicking outside
+            closeLinksBtn.addEventListener('click', function() { linksModal.style.display = 'none'; });
             window.addEventListener('click', function(event) {
-                if (event.target === adminModal) {
-                    adminModal.style.display = 'none';
-                }
-                if (event.target === linksModal) {
-                    linksModal.style.display = 'none';
-                }
+                if (event.target === adminModal) adminModal.style.display = 'none';
+                if (event.target === linksModal) linksModal.style.display = 'none';
             });
-            
-            // Initialize the page
             initializePage();
         });
     </script>
